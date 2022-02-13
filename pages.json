@@ -1,28 +1,32 @@
 {
   "pages": [{
     "path": "pages/home/home",
-    "style": {
-
-    }
-
+    "style": {}
   }, {
     "path": "pages/cate/cate",
-    "style": {
-      
-    }
-
+    "style": {}
   }, {
     "path": "pages/cart/cart",
-    "style": {
-      
-    }
-
+    "style": {}
   }, {
     "path": "pages/my/my",
-    "style": {
-      
-    }
-
+    "style": {}
+  }],
+  "subPackages": [{
+    "root": "subpkg",
+    "pages": [{
+      "path": "goods_detail/goods_detail",
+      "style": {}
+    }    ,{
+                    "path" : "goods_list/goods_list",
+                    "style" :                                                                                    
+                {
+                    "navigationBarTitleText": "",
+                    "enablePullDownRefresh": false
+                }
+                
+                }
+            ]
   }],
   "globalStyle": {
     "navigationBarTextStyle": "white",
@@ -34,7 +38,7 @@
     }
   },
   "tabBar": {
-    "selectedColor":"#C00000",
+    "selectedColor": "#C00000",
     "list": [{
         "pagePath": "pages/home/home",
         "text": "首页",
