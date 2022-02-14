@@ -1,5 +1,10 @@
 <template>
   <view>
+    <!-- 搜索组件 -->
+    <view class="search-box">
+      <my-search @click="gotoSearch"></my-search>
+    </view>
+    
     <!-- 轮播图的区域 -->
     <swiper :indicator-dots="true" :autoplay="true" :interval="3000" :duration="1000" :circular="true">
       <swiper-item v-for="(item, i) in swiperList" :key="i">
@@ -94,10 +99,18 @@
         })
         this.floorList = res.message
       },
+      
       // 导航数据的点击事件
       navClickHandler(item) {
         if (item.name === '分类') uni.switchTab({
           url: '/pages/cate/cate'
+        })
+      },
+      
+      // 导航到 search 页面
+      gotoSearch() {
+        uni.navigateTo({
+          url: '/subpkg/search/search'
         })
       }
     }
@@ -140,5 +153,14 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+  }
+  
+  .search-box {
+    // 吸底，搜索框不随滚动条移动
+    position: sticky;
+    // 放置在顶部
+    top: 0;
+    // 添加优先级，防止覆盖
+    z-index: 999;
   }
 </style>
